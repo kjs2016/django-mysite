@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from pybo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pybo/', include('pybo.urls')), #url 매핑시 항상 끝에 슬래시를 붙여주는게 좋다
+    path('question/create/', views.question_create, name='question_create'),
 ]
